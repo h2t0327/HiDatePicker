@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { LocaleProvider } from 'antd'
+import zh_CN from 'antd/es/locale-provider/zh_CN'
+import moment from 'moment'
+import 'moment/locale/zh-cn'
+import Hly from './Hly'
+
+moment.locale('zh-cn')
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <LocaleProvider locale={zh_CN}>
+      <div className='App' style={{ padding: 60 }}>
+        <Hly />
+      </div>
+    </LocaleProvider>
+  )
 }
 
-export default App;
+export default App
